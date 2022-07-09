@@ -11,6 +11,7 @@
     <title>Hello, world!</title>
      <style>
       div{
+        margin-top:40px;
         height:60px;
         width:250px;
       }
@@ -30,12 +31,12 @@
      {%csrf_token%}
   <div class="form-group" >
     <label for="musicupload">Music Upload</label>
-    <input type="file" class="form-control" id="musicupload" name='musicupload'>
+    <input type="file" class="form-control" id="musicupload" name='musicupload' required>
   </div>
 
 <div class="form-group">
 <label for="category">Music Category</label>
-<select id="category" name="category">
+<select id="category" name="category" required>
   <option value="Pop">Pop</option>
   <option value="Classic">Classic</option>
   <option value="Romantic">Romantic</option>
@@ -44,11 +45,18 @@
 </div>
 
 {% comment %} <div class="form-group">
+  <label for="singer_name">Singer Name</label>
+    <input type="singer" class="form-control" id="singer_name" name="singer">
+  </div> {% endcomment %}
+
+
+
+{% comment %} <div class="form-group">
     <label for="singers">Singer</label>
     <input type="text" class="form-control" id="singers" name='singer' required>
   </div> {% endcomment %}
   <button type="submit" class="btn btn-primary">Submit</button>
-  <a href='/music' class="btn btn-primary">Show Music</button>
+ <a href='/music' class="btn btn-primary">Show Music</a>
 </form>
 </center>
 

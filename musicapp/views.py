@@ -27,8 +27,8 @@ def home(request):
       file=request.FILES['musicupload']  
       data=str(file)     
       category=Category.objects.get(category_name=request.POST['category'])
-      singer=Singer.objects.get(singer_name=request.POST['singer'])
-      audio=Music(category_id=category,singer_id=singer,path=file,type=data[-3:])
+#       singer=Singer.objects.get(singer_name=request.POST.get('singer'))
+      audio=Music(category_id=category,path=file,type=data[-3:])
       audio.save()
       return render(request,'music/submit.html')
    return render(request,'music/submit.html')

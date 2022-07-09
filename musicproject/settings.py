@@ -25,7 +25,7 @@ SECRET_KEY = 'vtcz3-ouzwz#am_y#lb@m%qyx%7kq$*q+is&8nru&@gxv0#(tw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["ec2-3-143-211-211.us-east-2.compute.amazonaws.com","127.0.0.1"]
 
 
 # Application definition
@@ -74,10 +74,13 @@ WSGI_APPLICATION = 'musicproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'mydatabase.sqlite3'),
+DATABASES={
+    'default':{
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME':'MusicProject',
+        'USER':'postgres',
+        'PASSWORD':'gemiXC0UIpxX9x9aNA3D',
+        'HOST': 'database-1.ca71btfeeaax.us-east-2.rds.amazonaws.com',
     }
 }
 
